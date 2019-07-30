@@ -6,14 +6,17 @@
 trigger:
 - master
 
+# Linux testing 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# Lint Check
+- script: pylint
+  displayName: 'Style Check'
 
+# Run unit Tests on Python version 2.x
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo Running tests
+    echo Display test results
+  displayName: 'Running Tests'
