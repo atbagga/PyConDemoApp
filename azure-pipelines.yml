@@ -11,6 +11,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+# Install requirements
+- script: pip install pylint
+  displayName: 'Install requirements'
+
 # Lint Check
 - script: pylint
   displayName: 'Style Check'
